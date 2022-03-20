@@ -34,5 +34,5 @@ USER appuser
 COPY . .
 
 # Run the application
-CMD [ "python" , "./app.py" ]
+CMD [ "python", "-m" , "flask", "run", "--host=0.0.0.0"]
 
