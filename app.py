@@ -120,12 +120,3 @@ def containsShortVowel(syllable: str):
 
 if __name__ == '__main__':
     app.run()
-
-# import unicodedata as ud
-#
-# thai_str = 'ผ่าน'
-#
-# for cp in thai_str:
-#     print(f'{cp}\t{ud.category(cp)}\t{ud.name(cp)}')
-#
-# print(sum(1 for cp in thai_str if ud.category(cp)[0] != 'M'))
