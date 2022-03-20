@@ -2,3 +2,4 @@
 .pytest_cache
 .allure_result_folder
 .idea
+.coverage

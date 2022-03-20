@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        IMAGE_NAME = "tone-determination-api:${env.BUILD_ID}"
+        IMAGE_NAME = "tone-determination-api"
         registryCredentialsId = 'docker-jenkins'
         dockerImage = ''
     }
