@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello, Flask!"
+    return "Hello, Flask !!"
 
 
 @app.route("/api/sentence/<sentence>", methods=["GET"])
