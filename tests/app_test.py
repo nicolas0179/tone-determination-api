@@ -8,9 +8,14 @@ def test_findSentenceTones():
 
 
 def test_getSentenceTones(mocker):
-    subword_tokenize_mock = mocker.patch('pythainlp.subword_tokenize', return_value=['syllabe1', 'syllabe2'])
+    subword_tokenize_mock = mocker.patch('app.subword_tokenize', return_value=['syllabe1', 'syllabe2'])
+    get_tone_mock = mocker.patch('app.getTone', return_value='tone')
     actual = getSentenceTones('sentence')
-    subword_tokenize_mock.assert_called_once_with('sentence')
+    subword_tokenize_mock.assert_called_once_with('sentence', engine='dict', keep_whitespace=False)
+    get_tone_mock.assert_has_calls([mocker.call("syllabe1"), mocker.call("syllabe2")])
+    assert len(actual) == 2
+    assert actual[0] == {"syllable": "syllabe1", "tone": "tone"}
+    assert actual[1] == {"syllable": "syllabe2", "tone": "tone"}
 
 
 def test_findTone():

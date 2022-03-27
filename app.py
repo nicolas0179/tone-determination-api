@@ -16,7 +16,9 @@ def home():
 
 @app.route("/api/sentence/<sentence>", methods=["GET"])
 def findSentenceTones(sentence):
-    return jsonify(getSentenceTones(sentence))
+    response = jsonify(getSentenceTones(sentence))
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
 
 
 @app.route("/api/syllable/<syllable>", methods=["GET"])
