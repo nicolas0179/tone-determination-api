@@ -34,9 +34,8 @@ pipeline {
 
         stage('Remove Unused docker image') {
               steps{
-                sh "docker rmi $IMAGE_NAME:$BUILD_NUMBER"
-                 sh "docker rmi $IMAGE_NAME:latest"
-
+                sh "docker rmi vps-20c3d535.vps.ovh.net/$IMAGE_NAME:$BUILD_NUMBER"
+                 sh "docker rmi vps-20c3d535.vps.ovh.net/$IMAGE_NAME:latest"
               }
         }
     }
